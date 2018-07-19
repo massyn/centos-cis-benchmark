@@ -2,10 +2,8 @@
 
 # 5.1.1 Ensure cron daemon is enabled (Scored)
 
-# = older version of centos do not have systemctl, so we check for both
-
-if [[ -f /sbin/service ]]; then
-        service crond status | grep -E "crond .+ is running..." || exit $?
+if [[ "$(cat /etc/centos-release)" =~ "CentOS release 6." ]]; then
+        chkconfig --list crond | grep -E "2:on\s*3:on\s*4:on\s*5:on" || exit $?
 else
-        systemctl is-enabled crond | grep -E "enabled" || exit $?
+        systemctl is-enabled crond | grep enabled || exit $?
 fi
