@@ -13,7 +13,7 @@ test_wrapper() {
   NC='\033[0m'
 
   if [[ -f ./test/${ref}.sh ]]; then
-    ./test/${ref}.sh ${args} > /dev/null 2>/dev/null
+    bash ./test/${ref}.sh ${args} > /dev/null 2>/dev/null
     if [[ "$?" -eq 0 ]]; then
       echo -e "${GREEN}PASS${NC} - $ref - ${msg}"
     else
