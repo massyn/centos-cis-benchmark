@@ -1,2 +1,3 @@
 # centos-cis-benchmark
-CIS CentOS Linux 7 Benchmark
+Based on CIS CentOS Linux 6 Benchmark
+v2.1.0 - 12-27-2017
