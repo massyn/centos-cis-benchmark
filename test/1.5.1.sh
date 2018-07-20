@@ -6,4 +6,9 @@
 
 sysctl fs.suid_dumpable | grep -E "fs.suid_dumpable\s*=\s*0" || exit $?
 
-grep "fs\.suid_dumpable" /etc/sysctl.conf /etc/sysctl.d/* | grep -E "fs.suid_dumpable\s*=\s*0" || exit $?
+grep "fs\.suid_dumpable" /etc/sysctl.conf | grep -E "fs.suid_dumpable\s*=\s*0" || exit $?
+
+if [[ -f /etc/sysctl.d/* ]]; then
+        grep "fs\.suid_dumpable" /etc/sysctl.d/* | grep -E "fs.suid_dumpable\s*=\s*0" || exit $?
+fi
+
