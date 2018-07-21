@@ -24,6 +24,16 @@ test_wrapper() {
   fi
 }
 
+if [[ $(whoami) != "root" ]]; then
+        echo "You must run this script as root"
+        exit 1
+fi
+
+echo CIS CentOS Linux 6 Benchmark (v2.1.0 - 12-27-2017)
+echo
+echo hostname : `hostname`
+echo time     : `date`
+echo =================================================================================
 test_wrapper 1.1.1.1 "Ensure mounting of cramfs filesystems is disabled (Scored)"
 test_wrapper 1.1.1.2 "Ensure mounting of freevxfs filesystems is disabled (Scored)"
 test_wrapper 1.1.1.3 "Ensure mounting of jffs2 filesystems is disabled (Scored)"
