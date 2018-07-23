@@ -3,9 +3,9 @@
 
 # 2.1.4 - Ensure echo services are not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^echo-dgram|echo-stream\s")
+out=$(chkconfig --list | grep -E "^(echo-dgram|echo-stream)\s")
 [[ -z "${out}" ]] || exit 1
 
-out=$(chkconfig --list | grep -E "^echo-dgram|echo-stream\s" |grep ":on")
+out=$(chkconfig --list | grep -E "^(echo-dgram|echo-stream)\s" |grep ":on")
 [[ -z "${out}" ]] || exit 1
 

@@ -3,9 +3,9 @@
 
 # 2.2.16 - Ensure NIS Server is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^ypserv\s")
+out=$(chkconfig --list | grep -E "^(ypserv)\s")
 [[ -z "${out}" ]] || exit 1
 
-out=$(chkconfig --list | grep -E "^ypserv\s" |grep ":on")
+out=$(chkconfig --list | grep -E "^(ypserv)\s" |grep ":on")
 [[ -z "${out}" ]] || exit 1
 

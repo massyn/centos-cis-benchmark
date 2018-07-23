@@ -3,9 +3,9 @@
 
 # 2.1.5 - Ensure time services are not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^time-dgram|time-stream\s")
+out=$(chkconfig --list | grep -E "^(time-dgram|time-stream)\s")
 [[ -z "${out}" ]] || exit 1
 
-out=$(chkconfig --list | grep -E "^time-dgram|time-stream\s" |grep ":on")
+out=$(chkconfig --list | grep -E "^(time-dgram|time-stream)\s" |grep ":on")
 [[ -z "${out}" ]] || exit 1
 

@@ -3,9 +3,9 @@
 
 # 2.2.8 - Ensure DNS Server is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^named\s")
+out=$(chkconfig --list | grep -E "^(named)\s")
 [[ -z "${out}" ]] || exit 1
 
-out=$(chkconfig --list | grep -E "^named\s" |grep ":on")
+out=$(chkconfig --list | grep -E "^(named)\s" |grep ":on")
 [[ -z "${out}" ]] || exit 1
 
