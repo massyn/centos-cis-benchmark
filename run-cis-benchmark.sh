@@ -320,14 +320,27 @@ test_wrapper 6.2.17 "Ensure no duplicate GIDs exist (Scored)" Yes Server1 Workst
 test_wrapper 6.2.18 "Ensure no duplicate user names exist (Scored)" Yes Server1 Workstation1
 test_wrapper 6.2.19 "Ensure no duplicate group names exist (Scored)" Yes Server1 Workstation1
 
-echo score_server1 = $score_server1_ok / $score_server1_total
-echo score_server2 = $score_server2_ok / $score_server2_total
+echo
+echo Results
+echo
+echo "Scored (Server)"
+echo ====================================
+echo Server 1 = $score_server1_ok / $score_server1_total
+echo Server 2 = $score_server2_ok / $score_server2_total
 
-echo score_workstation1 = $score_workstation1_ok / $score_workstation1_total
-echo score_workstation2 = $score_workstation2_ok / $score_workstation2_total
+echo
+echo "Scored (Workstation)"
+echo ====================================
+echo Workstation 1 = $score_workstation1_ok / $score_workstation1_total
+echo Workstation 2 = $score_workstation2_ok / $score_workstation2_total
 
-echo noscore_server1 = $noscore_server1_ok / $noscore_server1_total
-echo noscore_server2 = $noscore_server2_ok / $noscore_server2_total
-
-echo noscore_workstation1 = $noscore_workstation1_ok / $noscore_workstation1_total
-echo noscore_workstation2 = $noscore_workstation2_ok / $noscore_workstation2_total
+echo
+echo "Not Scored (Server)"
+echo ====================================
+echo Server 1 = $noscore_server1_ok / $noscore_server1_total
+echo Server 2 = $noscore_server2_ok / $noscore_server2_total
+echo
+echo "Not Scored (Workstation)"
+echo ====================================
+echo Workstation 1 = $noscore_workstation1_ok / $noscore_workstation1_total
+echo Workstation 2 = $noscore_workstation2_ok / $noscore_workstation2_total
