@@ -1,5 +1,6 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.2.9 Ensure SSH PermitEmptyPasswords is disabled (Scored)
+# 5.2.9 - Ensure SSH PermitEmptyPasswords is disabled (Scored)
 
-grep "^PermitEmptyPasswords" /etc/ssh/sshd_config | grep -q "PermitEmptyPasswords no" || exit $?
+grep "^\s*PermitEmptyPasswords" /etc/ssh/sshd_config | grep -q "PermitEmptyPasswords\s*no" || exit $?

@@ -1,5 +1,6 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.2.3 Ensure SSH LogLevel is set to INFO (Scored)
+# 5.2.2 - Ensure SSH Protocol is set to 2 (Scored)
 
-grep "^LogLevel" /etc/ssh/sshd_config | grep -q "LogLevel INFO" || exit $?
+grep "^\s*Protocol" /etc/ssh/sshd_config | grep -q "Protocol\s*2" || exit $?

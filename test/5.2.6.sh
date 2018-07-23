@@ -1,5 +1,6 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.2.6 Ensure SSH IgnoreRhosts is enabled (Scored)
+# 5.2.6 - Ensure SSH IgnoreRhosts is enabled (Scored)
 
-grep "^IgnoreRhosts" /etc/ssh/sshd_config | grep -q "IgnoreRhosts yes" || exit $?
+grep "^\s*IgnoreRhosts" /etc/ssh/sshd_config | grep -q "IgnoreRhosts\s*yes" || exit $?

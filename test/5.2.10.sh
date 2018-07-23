@@ -1,5 +1,6 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.2.10 Ensure SSH PermitUserEnvironment is disabled (Scored)
+# 5.2.10 - Ensure SSH PermitUserEnvironment is disabled (Scored)
 
-grep "^PermitUserEnvironment" /etc/ssh/sshd_config | grep -q "PermitUserEnvironment no" || exit $?
+grep "^\s*PermitUserEnvironment" /etc/ssh/sshd_config | grep -q "PermitUserEnvironment\s*no" || exit $?
