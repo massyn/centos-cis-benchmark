@@ -8,3 +8,5 @@ git clone https://github.com/massyn/centos-cis-benchmark
 cd centos-cis-benchmark
 sudo bash run-cis-benchmark.sh
 ```
+## Acknowledgement
+* https://github.com/haxorof/centos-bench-security
