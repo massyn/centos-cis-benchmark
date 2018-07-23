@@ -30,6 +30,19 @@ test_wrapper() {
 		if [[ $server == 'Workstation1' || $server == 'Workstation2' ]]; then
 			score_workstation2_total=$((score_workstation2_total+1))
 		fi
+	else
+		if [[ $server == 'Server1' ]]; then
+			noscore_server1_total=$((noscore_server1_total+1))
+		fi
+		if [[ $server == 'Server1' || $server == 'Server2' ]]; then
+			noscore_server2_total=$((noscore_server2_total+1))
+		fi
+		if [[ $workstation == 'Workstation1' ]]; then
+			noscore_workstation1_total=$((noscore_workstation1_total+1))
+		fi
+		if [[ $server == 'Workstation1' || $server == 'Workstation2' ]]; then
+			noscore_workstation2_total=$((noscore_workstation2_total+1))
+		fi
 	fi
 
   if [[ -f ./test/${ref}.sh ]]; then
