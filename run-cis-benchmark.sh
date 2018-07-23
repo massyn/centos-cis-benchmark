@@ -1,20 +1,36 @@
 #!/bin/sh
 
 test_wrapper() {
-  local ref=$1
-  shift
-  local msg=$1
-  shift
-  local score=$1
-  shift
-  local server=$1
-  shift
-  local workstation=$1
+	local ref=$1
+	shift
+	local msg=$1
+	shift
+	local score=$1
+	shift
+	local server=$1
+	shift
+	local workstation=$1
 
-  RED='\033[0;31m'
-  GREEN='\033[0;32m'
-  YELLOW='\033[1;33m'
-  NC='\033[0m'
+	RED='\033[0;31m'
+	GREEN='\033[0;32m'
+	YELLOW='\033[1;33m'
+	NC='\033[0m'
+
+	# -- count
+	if [[ $score == 'Yes' ]]; then
+		if [[ $server == 'Server1' ]]; then
+			score_server1_total=$((score_server1_total+1))
+		fi
+		if [[ $server == 'Server1' || $server == 'Server2' ]]; then
+			score_server2_total=$((score_server2_total+1))
+		fi
+		if [[ $workstation == 'Workstation1' ]]; then
+			score_workstation1_total=$((score_workstation1_total+1))
+		fi
+		if [[ $server == 'Workstation1' || $server == 'Workstation2' ]]; then
+			score_workstation2_total=$((score_workstation2_total+1))
+		fi
+	fi
 
   if [[ -f ./test/${ref}.sh ]]; then
     bash ./test/${ref}.sh ${args} > /dev/null 2>/dev/null
@@ -262,4 +278,14 @@ test_wrapper 6.2.17 "Ensure no duplicate GIDs exist (Scored)" Yes Server1 Workst
 test_wrapper 6.2.18 "Ensure no duplicate user names exist (Scored)" Yes Server1 Workstation1
 test_wrapper 6.2.19 "Ensure no duplicate group names exist (Scored)" Yes Server1 Workstation1
 
+echo score_server1 = $score_server1_ok / $score_server1_total
+echo score_server2 = $score_server2_ok / $score_server2_total
 
+echo score_workstation1 = $score_workstation1_ok / $score_workstation1_total
+echo score_workstation2 = $score_workstation2_ok / $score_workstation2_total
+
+echo noscore_server1 = $noscore_server1_ok / $noscore_server1_total
+echo noscore_server2 = $noscore_server2_ok / $noscore_server2_total
+
+echo noscore_workstation1 = $noscore_workstation1_ok / $noscore_workstation1_total
+echo noscore_workstation2 = $noscore_workstation2_ok / $noscore_workstation2_total
