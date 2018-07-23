@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.2.5 Ensure SSH MaxAuthTries is set to 4 or less (Scored)
+# 5.2.5 - Ensure SSH MaxAuthTries is set to 4 or less (Scored)
 
 MAT=$(grep "^MaxAuthTries" /etc/ssh/sshd_config |awk {'print $1'})
 
