@@ -27,7 +27,7 @@ test_wrapper() {
 		if [[ $workstation == 'Workstation1' ]]; then
 			score_workstation1_total=$((score_workstation1_total+1))
 		fi
-		if [[ $server == 'Workstation1' || $server == 'Workstation2' ]]; then
+		if [[ $workstation == 'Workstation1' || $workstation == 'Workstation2' ]]; then
 			score_workstation2_total=$((score_workstation2_total+1))
 		fi
 	else
@@ -40,7 +40,7 @@ test_wrapper() {
 		if [[ $workstation == 'Workstation1' ]]; then
 			noscore_workstation1_total=$((noscore_workstation1_total+1))
 		fi
-		if [[ $server == 'Workstation1' || $server == 'Workstation2' ]]; then
+		if [[ $workstation == 'Workstation1' || $workstation == 'Workstation2' ]]; then
 			noscore_workstation2_total=$((noscore_workstation2_total+1))
 		fi
 	fi
