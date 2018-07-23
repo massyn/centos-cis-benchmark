@@ -3,9 +3,9 @@
 
 # 2.1.7 - Ensure talk server is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "talk")
+out=$(chkconfig --list | grep -E "^talk\s")
 [[ -z "${out}" ]] || exit 1
 
-out=$(chkconfig --list | grep -E "talk" |grep ":on")
+out=$(chkconfig --list | grep -E "^talk\s" |grep ":on")
 [[ -z "${out}" ]] || exit 1
 

@@ -3,9 +3,9 @@
 
 # 2.1.6 - Ensure rsh server is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "rsh|rlogin|rexec")
+out=$(chkconfig --list | grep -E "^rsh|rlogin|rexec\s")
 [[ -z "${out}" ]] || exit 1
 
-out=$(chkconfig --list | grep -E "rsh|rlogin|rexec" |grep ":on")
+out=$(chkconfig --list | grep -E "^rsh|rlogin|rexec\s" |grep ":on")
 [[ -z "${out}" ]] || exit 1
 
