@@ -10,3 +10,5 @@ grep "net.ipv4.ip_forward" /etc/sysctl.conf | grep -E "net.ipv4.ip_forward = 0" 
 if [[ -f /etc/sysctl.d/* ]]; then
         grep "net.ipv4.ip_forward" /etc/sysctl.d/* | grep -E "net.ipv4.ip_forward = 0" || exit $?
 fi
+
+

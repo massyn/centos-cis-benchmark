@@ -4,7 +4,7 @@
 # 6.1.9 - Ensure permissions on /etc/gshadow- are configured (Scored)
 
 file=/etc/gshadow-
-perm="^0"
+perm="^0 0 0"
 
 p=$(echo $perm | awk {'print $1'} | sed "s/[^0-9]//g" )
 o=$(echo $perm | awk {'print $2'})

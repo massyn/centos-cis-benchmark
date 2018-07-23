@@ -18,3 +18,5 @@ grep "net.ipv4.conf.default.log_martians" /etc/sysctl.conf | grep -E "net.ipv4.c
 if [[ -f /etc/sysctl.d/* ]]; then
         grep "net.ipv4.conf.default.log_martians" /etc/sysctl.d/* | grep -E "net.ipv4.conf.default.log_martians = 1" || exit $?
 fi
+
+

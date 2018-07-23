@@ -18,3 +18,5 @@ grep "net.ipv6.conf.default.accept_redirects" /etc/sysctl.conf | grep -E "net.ip
 if [[ -f /etc/sysctl.d/* ]]; then
         grep "net.ipv6.conf.default.accept_redirects" /etc/sysctl.d/* | grep -E "net.ipv6.conf.default.accept_redirects = 0" || exit $?
 fi
+
+
