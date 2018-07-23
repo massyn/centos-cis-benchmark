@@ -1,5 +1,11 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 1.1.22 Disable Automounting (Scored)
+# 1.1.22 - Disable Automounting (Scored)
 
-chkconfig --list autofs 2>&1 | grep -E "0:off\s*1:off\s*2:off\s*3:off\s*4:off\s*5:off\s*6:off|error reading" || exit $?
+out=$(chkconfig --list | grep -E "autofs")
+[[ -z "${out}" ]] || exit 1
+
+out=$(chkconfig --list | grep -E "autofs" |grep ":on")
+[[ -z "${out}" ]] || exit 1
+
