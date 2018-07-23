@@ -1,7 +1,6 @@
 #!/bin/sh
 
-# 1.1.1.3 Ensure mounting of jffs2 filesystems is disabled (Scored)
+# 1.1.1.3 - Ensure mounting of jffs2 filesystems is disabled (Scored)
 
 modprobe -n -v jffs2 | grep -E "install /bin/true" || exit $?
-
-lsmod | grep jffs2 || exit $?
+[[ -z "$(lsmod | grep jffs2)" ]] || exit 1
