@@ -1,4 +1,5 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
 # 1.1.1.7 - Ensure mounting of udf filesystems is disabled (Scored)
 

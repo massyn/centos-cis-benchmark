@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.2.3 Ensure secure ICMP redirects are not accepted (Scored)
+# 3.2.3 - Ensure secure ICMP redirects are not accepted (Scored)
 
 sysctl net.ipv4.conf.all.secure_redirects | grep -E "net.ipv4.conf.all.secure_redirects = 0" || exit $?
 

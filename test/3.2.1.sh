@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.2.1 Ensure source routed packets are not accepted (Scored)
+# 3.2.1 - Ensure source routed packets are not accepted (Scored)
 
 sysctl net.ipv4.conf.all.accept_source_route | grep -E "net.ipv4.conf.all.accept_source_route = 0" || exit $?
 

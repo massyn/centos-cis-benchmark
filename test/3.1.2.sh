@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.1.2 Ensure packet redirect sending is disabled (Scored)
+# 3.1.2 - Ensure packet redirect sending is disabled (Scored)
 
 sysctl net.ipv4.conf.all.send_redirects | grep -E "net.ipv4.conf.all.send_redirects = 0" || exit $?
 

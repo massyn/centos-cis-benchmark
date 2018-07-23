@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.2.8 Ensure TCP SYN Cookies is enabled (Scored)
+# 3.2.8 - Ensure TCP SYN Cookies is enabled (Scored)
 
 sysctl net.ipv4.tcp_syncookies | grep -E "net.ipv4.tcp_syncookies = 1" || exit $?
 

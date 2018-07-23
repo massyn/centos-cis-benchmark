@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.2.6 Ensure bogus ICMP responses are ignored (Scored)
+# 3.2.6 - Ensure bogus ICMP responses are ignored (Scored)
 
 sysctl net.ipv4.icmp_ignore_bogus_error_responses | grep -E "net.ipv4.icmp_ignore_bogus_error_responses = 1" || exit $?
 

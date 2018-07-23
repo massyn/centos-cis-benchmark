@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.3.2 Ensure IPv6 redirects are not accepted (Not Scored)
+# 3.3.2 - Ensure IPv6 redirects are not accepted (Not Scored)
 
 sysctl net.ipv6.conf.all.accept_redirects | grep -E "net.ipv6.conf.all.accept_redirects = 0" || exit $?
 

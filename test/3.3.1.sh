@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.3.1 Ensure IPv6 router advertisements are not accepted (Not Scored)
+# 3.3.1 - Ensure IPv6 router advertisements are not accepted (Not Scored)
 
 sysctl net.ipv6.conf.all.accept_ra | grep -E "net.ipv6.conf.all.accept_ra = 0" || exit $?
 

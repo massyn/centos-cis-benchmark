@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.2.7 Ensure Reverse Path Filtering is enabled (Scored)
+# 3.2.7 - Ensure Reverse Path Filtering is enabled (Scored)
 
 sysctl net.ipv4.conf.all.rp_filter | grep -E "net.ipv4.conf.all.rp_filter = 1" || exit $?
 

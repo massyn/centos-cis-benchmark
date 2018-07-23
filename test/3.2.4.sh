@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.2.4 Ensure suspicious packets are logged (Scored)
+# 3.2.4 - Ensure suspicious packets are logged (Scored)
 
 sysctl net.ipv4.conf.all.log_martians | grep -E "net.ipv4.conf.all.log_martians = 1" || exit $?
 

@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.2.5 Ensure broadcast ICMP requests are ignored (Scored)
+# 3.2.5 - Ensure broadcast ICMP requests are ignored (Scored)
 
 sysctl net.ipv4.icmp_echo_ignore_broadcasts | grep -E "net.ipv4.icmp_echo_ignore_broadcasts = 1" || exit $?
 

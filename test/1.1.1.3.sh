@@ -1,4 +1,5 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
 # 1.1.1.3 - Ensure mounting of jffs2 filesystems is disabled (Scored)
 
