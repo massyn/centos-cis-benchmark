@@ -16,7 +16,7 @@ test_wrapper() {
 	YELLOW='\033[1;33m'
 	NC='\033[0m'
 
-	# -- count
+	# -- count the totals for the baseline
 	if [[ $score == 'Yes' ]]; then
 		if [[ $server == 'Server1' ]]; then
 			score_server1_total=$((score_server1_total+1))
@@ -45,16 +45,45 @@ test_wrapper() {
 		fi
 	fi
 
-  if [[ -f ./test/${ref}.sh ]]; then
-    bash ./test/${ref}.sh ${args} > /dev/null 2>/dev/null
-    if [[ "$?" -eq 0 ]]; then
-      echo -e "${GREEN}PASS${NC} - $ref - ${msg}"
-    else
-	    echo -e "${RED}FAIL${NC} - $ref - ${msg}"
-    fi
-  else
-    echo -e "${YELLOW}SKIP${NC} - $ref - ${msg}"
-  fi
+	if [[ -f ./test/${ref}.sh ]]; then
+		bash ./test/${ref}.sh ${args} > /dev/null 2>/dev/null
+		if [[ "$?" -eq 0 ]]; then
+			echo -e "${GREEN}PASS${NC} - $ref - ${msg}"
+			
+			# -- count the success for the baseline
+			if [[ $score == 'Yes' ]]; then
+				if [[ $server == 'Server1' ]]; then
+					score_server1_ok=$((score_server1_ok+1))
+				fi
+				if [[ $server == 'Server1' || $server == 'Server2' ]]; then
+					score_server2_ok=$((score_server2_ok+1))
+				fi
+				if [[ $workstation == 'Workstation1' ]]; then
+					score_workstation1_ok=$((score_workstation1_ok+1))
+				fi
+				if [[ $workstation == 'Workstation1' || $workstation == 'Workstation2' ]]; then
+					score_workstation2_ok=$((score_workstation2_ok+1))
+				fi
+			else
+				if [[ $server == 'Server1' ]]; then
+					noscore_server1_ok=$((noscore_server1_ok+1))
+				fi
+				if [[ $server == 'Server1' || $server == 'Server2' ]]; then
+					noscore_server2_ok=$((noscore_server2_ok+1))
+				fi
+				if [[ $workstation == 'Workstation1' ]]; then
+					noscore_workstation1_ok=$((noscore_workstation1_ok+1))
+				fi
+				if [[ $workstation == 'Workstation1' || $workstation == 'Workstation2' ]]; then
+					noscore_workstation2_ok=$((noscore_workstation2_ok+1))
+				fi
+			fi
+		else
+			echo -e "${RED}FAIL${NC} - $ref - ${msg}"
+		fi
+	else
+		echo -e "${YELLOW}SKIP${NC} - $ref - ${msg}"
+	fi
 }
 
 if [[ $(whoami) != "root" ]]; then
