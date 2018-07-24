@@ -5,10 +5,15 @@
 
 sysctl fs.suid_dumpable | grep -E "fs.suid_dumpable = 0" || exit $?
 
-grep "fs.suid_dumpable" /etc/sysctl.conf | grep -E "fs.suid_dumpable = 0" || exit $?
+grep "fs.suid_dumpable" /etc/sysctl.conf | grep -E "fs.suid_dumpable = 0"
+if [[ $? == 0 ]]; then
+        exit 0
+fi
 
 if [[ $(ls -A /etc/sysctl.d/) ]] ; then
         grep "fs.suid_dumpable" /etc/sysctl.d/* | grep -E "fs.suid_dumpable = 0" || exit $?
+else
+        exit 1
 fi
 
 
