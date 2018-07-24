@@ -7,7 +7,7 @@ sysctl net.ipv4.conf.all.secure_redirects | grep -E "net.ipv4.conf.all.secure_re
 
 grep "net.ipv4.conf.all.secure_redirects" /etc/sysctl.conf | grep -E "net.ipv4.conf.all.secure_redirects = 0" || exit $?
 
-if [[ -f /etc/sysctl.d/* ]]; then
+if [[ $(ls -A /etc/sysctl.d/) ]] ; then
         grep "net.ipv4.conf.all.secure_redirects" /etc/sysctl.d/* | grep -E "net.ipv4.conf.all.secure_redirects = 0" || exit $?
 fi
 
@@ -15,7 +15,7 @@ sysctl net.ipv4.conf.default.secure_redirects | grep -E "net.ipv4.conf.default.s
 
 grep "net.ipv4.conf.default.secure_redirects" /etc/sysctl.conf | grep -E "net.ipv4.conf.default.secure_redirects = 0" || exit $?
 
-if [[ -f /etc/sysctl.d/* ]]; then
+if [[ $(ls -A /etc/sysctl.d/) ]] ; then
         grep "net.ipv4.conf.default.secure_redirects" /etc/sysctl.d/* | grep -E "net.ipv4.conf.default.secure_redirects = 0" || exit $?
 fi
 

@@ -7,7 +7,7 @@ sysctl net.ipv4.tcp_syncookies | grep -E "net.ipv4.tcp_syncookies = 1" || exit $
 
 grep "net.ipv4.tcp_syncookies" /etc/sysctl.conf | grep -E "net.ipv4.tcp_syncookies = 1" || exit $?
 
-if [[ -f /etc/sysctl.d/* ]]; then
+if [[ $(ls -A /etc/sysctl.d/) ]] ; then
         grep "net.ipv4.tcp_syncookies" /etc/sysctl.d/* | grep -E "net.ipv4.tcp_syncookies = 1" || exit $?
 fi
 

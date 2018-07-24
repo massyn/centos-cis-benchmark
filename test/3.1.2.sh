@@ -7,7 +7,7 @@ sysctl net.ipv4.conf.all.send_redirects | grep -E "net.ipv4.conf.all.send_redire
 
 grep "net.ipv4.conf.all.send_redirects" /etc/sysctl.conf | grep -E "net.ipv4.conf.all.send_redirects = 0" || exit $?
 
-if [[ -f /etc/sysctl.d/* ]]; then
+if [[ $(ls -A /etc/sysctl.d/) ]] ; then
         grep "net.ipv4.conf.all.send_redirects" /etc/sysctl.d/* | grep -E "net.ipv4.conf.all.send_redirects = 0" || exit $?
 fi
 
@@ -15,7 +15,7 @@ sysctl net.ipv4.conf.default.send_redirects | grep -E "net.ipv4.conf.default.sen
 
 grep "net.ipv4.conf.default.send_redirects" /etc/sysctl.conf | grep -E "net.ipv4.conf.default.send_redirects = 0" || exit $?
 
-if [[ -f /etc/sysctl.d/* ]]; then
+if [[ $(ls -A /etc/sysctl.d/) ]] ; then
         grep "net.ipv4.conf.default.send_redirects" /etc/sysctl.d/* | grep -E "net.ipv4.conf.default.send_redirects = 0" || exit $?
 fi
 

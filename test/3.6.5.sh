@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.6.5 Ensure firewall rules exist for all open ports (Scored)
+# 3.6.5 - Ensure firewall rules exist for all open ports (Scored)
 
 # tcp
 for port in $(netstat -lnt |grep ^tcp | grep LISTEN | awk {'print $4'} | cut -d":" -f2); do

@@ -1,14 +1,14 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 1.5.1 Ensure core dumps are restricted (Scored)
+# 1.5.1 - Ensure core dumps are restricted (Scored)
 
-#grep "\*\s*hard\s*core\s*0" /etc/security/limits.conf /etc/security/limits.d/* || exit $?
+sysctl fs.suid_dumpable | grep -E "fs.suid_dumpable = 0" || exit $?
 
-sysctl fs.suid_dumpable | grep -E "fs.suid_dumpable\s*=\s*0" || exit $?
+grep "fs.suid_dumpable" /etc/sysctl.conf | grep -E "fs.suid_dumpable = 0" || exit $?
 
-grep "fs\.suid_dumpable" /etc/sysctl.conf | grep -E "fs.suid_dumpable\s*=\s*0" || exit $?
-
-if [[ -f /etc/sysctl.d/* ]]; then
-        grep "fs\.suid_dumpable" /etc/sysctl.d/* | grep -E "fs.suid_dumpable\s*=\s*0" || exit $?
+if [[ $(ls -A /etc/sysctl.d/) ]] ; then
+        grep "fs.suid_dumpable" /etc/sysctl.d/* | grep -E "fs.suid_dumpable = 0" || exit $?
 fi
+
 
