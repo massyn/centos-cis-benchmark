@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 4.2.1.2 Ensure logging is configured (Not Scored)
+# 4.2.1.2 - Ensure logging is configured (Not Scored)
 
 grep "\*.emerg\s*:omusrmsg:\*" /etc/rsyslog.conf /etc/rsyslog.d/*.conf || exit 1
 grep "mail.\*\s*-/var/log/mail" /etc/rsyslog.conf /etc/rsyslog.d/*.conf || exit 1

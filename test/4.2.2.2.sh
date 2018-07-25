@@ -1,7 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 4.2.2.2 Ensure grep "logging is configured (Not Scored)
-
+# 4.2.2.2 - Ensure logging is configured (Not Scored)
 
 grep "log { source(src); source(chroots); filter(f_console); destination(console); };" /etc/syslog-ng/syslog-ng.conf || exit 1
 grep "log { source(src); source(chroots); filter(f_console); destination(xconsole); };" /etc/syslog-ng/syslog-ng.conf || exit 1

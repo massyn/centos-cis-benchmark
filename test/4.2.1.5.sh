@@ -1,4 +1,5 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
 # 4.2.1.5 - Ensure remote rsyslog messages are only accepted on designated log hosts. (Not Scored)
 
