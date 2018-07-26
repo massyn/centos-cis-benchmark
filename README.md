@@ -13,6 +13,8 @@ sudo bash run-cis-benchmark.sh
 The following tests must be executed manually.  These are dependent on your own site configuration, and needs a manual check.  By default, the audit scripts will fail these checks.
 
 * 1.2.1 - Ensure package manager repositories are configured (Not Scored)
+* 3.4.2 - Ensure /etc/hosts.allow is configured (Scored)
+* 3.4.3 - Ensure /etc/hosts.deny is configured (Scored)
 * 3.6.4 - Ensure outbound and established connections are configured (Not Scored)
 * 5.5 - Ensure root login is restricted to system console (Not Scored)
 
