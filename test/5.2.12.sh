@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.2.12 Ensure SSH Idle Timeout Interval is configured (Scored)
+# 5.2.12 - Ensure SSH Idle Timeout Interval is configured (Scored)
 
 CAI=$(grep "^ClientAliveInterval" /etc/ssh/sshd_config | awk {'print $2'})
 
