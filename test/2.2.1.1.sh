@@ -1,12 +1,13 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 2.2.1.1 Ensure time synchronization is in use (Not Scored)
+# 2.2.1.1 - Ensure time synchronization is in use (Not Scored)
 
 rpm -q ntp | grep -E "^ntp-"
-ntp=$?
+app1=$?
 rpm -q chrony | grep -E "^chrony-"
-chrony=$?
+app2=$?
 
-if [[ $chrony -eq 1 && $ntp -eq 1 ]]; then
+if [[ $app1 -eq 1 && $app2 -eq 1 ]]; then
         exit 1
 fi
