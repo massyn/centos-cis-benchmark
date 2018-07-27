@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 3.6.3 Ensure loopback traffic is configured (Scored)
+# 3.6.3 - Ensure loopback traffic is configured (Scored)
 
 accept="ACCEPT[[:space:]]+all[[:space:]]+--[[:space:]]+lo[[:space:]]+\*[[:space:]]+0\.0\.0\.0\/0[[:space:]]+0\.0\.0\.0\/0"
 drop="DROP[[:space:]]+all[[:space:]]+--[[:space:]]+\*[[:space:]]+\*[[:space:]]+127\.0\.0\.0\/8[[:space:]]+0\.0\.0\.0\/0"

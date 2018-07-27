@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 4.1.14 Ensure file deletion events by users are collected (Scored)
+# 4.1.14 - Ensure file deletion events by users are collected (Scored)
 
 cut -d\# -f1 /etc/audit/audit.rules | egrep "\-k[[:space:]]+delete" | egrep "\-S[[:space:]]+unlink" \
   | egrep "\-F[[:space:]]+arch=b64" | egrep "\-S[[:space:]]+unlinkat" | egrep "\-S[[:space:]]+rename" \
@@ -13,3 +14,4 @@ cut -d\# -f1 /etc/audit/audit.rules | egrep "\-k[[:space:]]+delete" | egrep "\-S
   | egrep "\-S[[:space:]]+renameat" | egrep "\-F[[:space:]]+auid>=1000" \
   | egrep "\-F[[:space:]]+auid\!=4294967295" \
   | egrep -q "\-a[[:space:]]+always,exit|\-a[[:space:]]+exit,always" || exit 1
+

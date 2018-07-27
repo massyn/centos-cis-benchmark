@@ -1,7 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.4.1.4 Ensure inactive password lock is 30 days or less (Scored)
-
+# 5.4.1.4 - Ensure inactive password lock is 30 days or less (Scored)
 
 INA=$(useradd -D | grep INACTIVE | cut -d= -f2)
 echo Inactive is $INA

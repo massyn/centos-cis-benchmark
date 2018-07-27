@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.4.1.1 Ensure password expiration is 365 days or less (Scored)
+# 5.4.1.1 - Ensure password expiration is 365 days or less (Scored)
 
 PMD=$(grep -E "^PASS_MAX_DAYS" /etc/login.defs | awk {'print $2'})
 

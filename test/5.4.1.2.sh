@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.4.1.2 Ensure minimum days between password changes is 7 or more (Scored)
+# 5.4.1.2 - Ensure minimum days between password changes is 7 or more (Scored)
 
 PMD=$(grep -E "^PASS_MIN_DAYS" /etc/login.defs | awk {'print $2'})
 

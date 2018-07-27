@@ -1,6 +1,7 @@
 #!/bin/sh
+# ** AUTO GENERATED **
 
-# 5.2.11 Ensure only approved MAC algorithms are used (Scored)
+# 5.2.11 - Ensure only approved MAC algorithms are used (Scored)
 
 MACs=$(grep "MACs" /etc/ssh/sshd_config  | awk {'print $2'})
 
