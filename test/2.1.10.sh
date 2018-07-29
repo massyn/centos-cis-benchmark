@@ -3,9 +3,6 @@
 
 # 2.1.10 - Ensure rsync service is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^(rsync)\s")
-[[ -z "${out}" ]] || exit 1
-
 out=$(chkconfig --list | grep -E "^(rsync)\s" |grep ":on")
 [[ -z "${out}" ]] || exit 1
 

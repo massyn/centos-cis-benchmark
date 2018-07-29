@@ -5,7 +5,6 @@
 
 rpm -q chrony | grep -E "^chrony-"
 if [[ $? -eq 0 ]]; then
-        grep "^(server|pool)" /etc/chrony.conf || exit $?
-
-        grep "^OPTIONS" /etc/sysconfig/chronyd | grep "OPTIONS=\"-u chrony\"" || exit $?
+        grep -E "^(server|pool)" /etc/chrony.conf || exit $?
+        grep -E "^OPTIONS" /etc/sysconfig/chronyd | grep "OPTIONS=\"-u chrony\"" || exit $?
 Fi
