@@ -7,7 +7,7 @@ if [[ -r /etc/shadow ]]; then
 
    export result=$(cat /etc/shadow | awk -F: '($2 == "" ) { print $1}')
 
-   if [[ $result -eq '' ]]; then
+   if [[ -z $result ]]; then
       exit 0
    else
       exit 1

@@ -5,6 +5,10 @@
 
 MACs=$(grep "MACs" /etc/ssh/sshd_config  | awk {'print $2'})
 
+if [[ -z $MACs ]]; then
+        exit 1
+fi
+
 for MAC in $(echo $MACs | sed "s/,/ /g")
 do
         echo MAC = $MAC
