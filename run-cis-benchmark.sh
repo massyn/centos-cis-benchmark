@@ -91,7 +91,7 @@ if [[ $(whoami) != "root" ]]; then
         exit 1
 fi
 
-echo "CIS CentOS Linux 6 Benchmark (v2.1.0 - 12-27-2017)"
+echo "CIS CentOS Linux 7 Benchmark (v2.2.0 - 12-27-2017)"
 echo
 echo hostname : `hostname`
 echo time     : `date`
@@ -133,7 +133,6 @@ test_wrapper 1.3.2 "Ensure filesystem integrity is regularly checked (Scored)" Y
 test_wrapper 1.4.1 "Ensure permissions on bootloader config are configured (Scored)" Yes Server1 Workstation1
 test_wrapper 1.4.2 "Ensure bootloader password is set (Scored)" Yes Server1 Workstation1
 test_wrapper 1.4.3 "Ensure authentication required for single user mode (Scored)" Yes Server1 Workstation1
-test_wrapper 1.4.4 "Ensure interactive boot is not enabled (Scored)" Yes Server1 Workstation1
 test_wrapper 1.5.1 "Ensure core dumps are restricted (Scored)" Yes Server1 Workstation1
 test_wrapper 1.5.2 "Ensure XD/NX support is enabled (Not Scored)" No Server1 Workstation1
 test_wrapper 1.5.3 "Ensure address space layout randomization (ASLR) is enabled (Scored)" Yes Server1 Workstation1
@@ -152,18 +151,14 @@ test_wrapper 1.7.1.4 "Ensure permissions on /etc/motd are configured (Not Scored
 test_wrapper 1.7.1.5 "Ensure permissions on /etc/issue are configured (Scored)" Yes Server1 Workstation1
 test_wrapper 1.7.1.6 "Ensure permissions on /etc/issue.net are configured (Not Scored)" No Server1 Workstation1
 test_wrapper 1.7.2 "Ensure GDM login banner is configured (Scored)" Yes Server1 Workstation1
-test_wrapper 1.8 "Ensure updates, patches, and additional security software are installed (Not Scored)" No Server1 Workstation1
+test_wrapper 1.8 "Ensure updates, patches, and additional security software are installed (Scored)" Yes Server1 Workstation1
 test_wrapper 2.1.1 "Ensure chargen services are not enabled (Scored)" Yes Server1 Workstation1
 test_wrapper 2.1.2 "Ensure daytime services are not enabled (Scored)" Yes Server1 Workstation1
 test_wrapper 2.1.3 "Ensure discard services are not enabled (Scored)" Yes Server1 Workstation1
 test_wrapper 2.1.4 "Ensure echo services are not enabled (Scored)" Yes Server1 Workstation1
 test_wrapper 2.1.5 "Ensure time services are not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.6 "Ensure rsh server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.7 "Ensure talk server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.8 "Ensure telnet server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.9 "Ensure tftp server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.10 "Ensure rsync service is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.11 "Ensure xinetd is not enabled (Scored)" Yes Server1 Workstation1
+test_wrapper 2.1.6 "Ensure tftp server is not enabled (Scored)" Yes Server1 Workstation1
+test_wrapper 2.1.7 "Ensure xinetd is not enabled (Scored)" Yes Server1 Workstation1
 test_wrapper 2.2.1.1 "Ensure time synchronization is in use (Not Scored)" No Server1 Workstation1
 test_wrapper 2.2.1.2 "Ensure ntp is configured (Scored)" Yes Server1 Workstation1
 test_wrapper 2.2.1.3 "Ensure chrony is configured (Scored)" Yes Server1 Workstation1
@@ -182,6 +177,11 @@ test_wrapper 2.2.13 "Ensure HTTP Proxy Server is not enabled (Scored)" Yes Serve
 test_wrapper 2.2.14 "Ensure SNMP Server is not enabled (Scored)" Yes Server1 Workstation1
 test_wrapper 2.2.15 "Ensure mail transfer agent is configured for local-only mode (Scored)" Yes Server1 Workstation1
 test_wrapper 2.2.16 "Ensure NIS Server is not enabled (Scored)" Yes Server1 Workstation1
+test_wrapper 2.2.17 "Ensure rsh server is not enabled (Scored)" Yes Server1 Workstation1
+test_wrapper 2.2.18 "Ensure telnet server is not enabled (Scored)" Yes Server1 Workstation1
+test_wrapper 2.2.19 "Ensure tftp server is not enabled (Scored)" Yes Server1 Workstation1
+test_wrapper 2.2.20 "Ensure rsync service is not enabled (Scored)" Yes Server1 Workstation1
+test_wrapper 2.2.21 "Ensure talk server is not enabled (Scored)" Yes Server1 Workstation1
 test_wrapper 2.3.1 "Ensure NIS Client is not installed (Scored)" Yes Server1 Workstation1
 test_wrapper 2.3.2 "Ensure rsh client is not installed (Scored)" Yes Server1 Workstation1
 test_wrapper 2.3.3 "Ensure talk client is not installed (Scored)" Yes Server1 Workstation1
