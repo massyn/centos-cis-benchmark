@@ -3,6 +3,4 @@
 
 # 2.2.5 - Ensure DHCP Server is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^(dhcpd)\s" |grep ":on")
-[[ -z "${out}" ]] || exit 1
-
+systemctl is-enabled dhcpd | grep disabled || exit $?

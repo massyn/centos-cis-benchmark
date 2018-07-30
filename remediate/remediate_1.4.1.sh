@@ -3,7 +3,7 @@
 
 # 1.4.1 - Ensure permissions on bootloader config are configured (Scored)
 
-file=/boot/grub/grub.conf
+file=/boot/grub2/grub.cfg
 perm="600 0 0"
 
 p=$(echo $perm | awk {'print $1'} | sed "s/[^0-9]//g" )

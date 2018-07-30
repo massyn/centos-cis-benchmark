@@ -3,4 +3,4 @@
 
 # 2.2.11 - Ensure IMAP and POP3 server is not enabled (Scored)
 
-chkconfig dovecot off 
+systemctl disable dovecot

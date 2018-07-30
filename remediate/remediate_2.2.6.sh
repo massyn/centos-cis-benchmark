@@ -3,4 +3,4 @@
 
 # 2.2.6 - Ensure LDAP server is not enabled (Scored)
 
-chkconfig slapd off 
+systemctl disable slapd

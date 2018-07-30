@@ -3,4 +3,4 @@
 
 # 2.2.10 - Ensure HTTP server is not enabled (Scored)
 
-chkconfig httpd off 
+systemctl disable httpd

@@ -3,6 +3,4 @@
 
 # 2.2.13 - Ensure HTTP Proxy Server is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^(squid)\s" |grep ":on")
-[[ -z "${out}" ]] || exit 1
-
+systemctl is-enabled squid | grep disabled || exit $?

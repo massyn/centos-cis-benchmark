@@ -3,6 +3,4 @@
 
 # 2.2.12 - Ensure Samba is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^(smb)\s" |grep ":on")
-[[ -z "${out}" ]] || exit 1
-
+systemctl is-enabled smb | grep disabled || exit $?

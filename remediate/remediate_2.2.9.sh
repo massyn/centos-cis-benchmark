@@ -3,4 +3,4 @@
 
 # 2.2.9 - Ensure FTP Server is not enabled (Scored)
 
-chkconfig vsftpd off 
+systemctl disable vsftpd
