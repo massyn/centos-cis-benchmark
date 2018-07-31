@@ -3,4 +3,4 @@
 
 # 1.8 - Ensure updates, patches, and additional security software are installed (Scored)
 
-yum update -y
+yum update -y --security

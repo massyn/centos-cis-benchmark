@@ -3,4 +3,4 @@
 
 # 1.4.2 - Ensure bootloader password is set (Scored)
 
-grep "^password" /boot/grub2/grub.cfg || exit $?
+grep "^GRUB2_PASSWORD" /boot/grub2/grub.cfg || exit $?

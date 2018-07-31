@@ -6,5 +6,5 @@
 variable="rsh|rlogin|rexec"
 for i in $(echo $variable | sed "s/|/ /g")
 do
-    chkconfig $i off
+    systemctl disable $i
 done

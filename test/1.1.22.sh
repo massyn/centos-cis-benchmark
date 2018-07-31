@@ -3,6 +3,4 @@
 
 # 1.1.22 - Disable Automounting (Scored)
 
-out=$(chkconfig --list | grep -E "^(autofs)\s" |grep ":on")
-[[ -z "${out}" ]] || exit 1
-
+systemctl is-enabled autofs 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?

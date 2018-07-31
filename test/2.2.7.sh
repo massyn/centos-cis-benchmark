@@ -3,6 +3,8 @@
 
 # 2.2.7 - Ensure NFS and RPC are not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^(nfs|nfs-server|rpcbind)\s" |grep ":on")
-[[ -z "${out}" ]] || exit 1
-
+variable="nfs|nfs-server|rpcbind"
+for i in $(echo $variable | sed "s/|/ /g")
+do
+    systemctl is-enabled $i 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
+done

@@ -5,4 +5,4 @@
 
 grep SELINUXTYPE=targeted /etc/selinux/config || exit $1
 
-sestatus | grep -E "Policy from config file:\s*targeted" || exit $1
+sestatus | grep -E "Loaded policy name:\s*targeted" || exit $1

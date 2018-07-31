@@ -3,4 +3,4 @@
 
 # 1.1.22 - Disable Automounting (Scored)
 
-chkconfig autofs off 
+systemctl disable autofs
