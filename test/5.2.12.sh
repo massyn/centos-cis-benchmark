@@ -12,7 +12,7 @@ fi
 
 CACM=$(grep "^ClientAliveCountMax" /etc/ssh/sshd_config |awk {'print $2'})
 
-if [[ $CACM -eq '' || $CACM -gt 3 ]]; then
+if [[ $CACM -gt 3 ]]; then
         echo ClientAliveCountMax = $CACM
         exit 1
 fi
