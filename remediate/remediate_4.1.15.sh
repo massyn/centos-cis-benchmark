@@ -5,3 +5,4 @@
 
 echo "-w /etc/sudoers -p wa -k scope" >> /etc/audit/rules.d/audit.rules
 echo "-w /etc/sudoers.d/ -p wa -k scope" >> /etc/audit/rules.d/audit.rules
+service auditd restart

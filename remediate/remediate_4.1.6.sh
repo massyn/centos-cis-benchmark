@@ -10,3 +10,4 @@ echo "-w /etc/issue.net -p wa -k system-locale" >> /etc/audit/rules.d/audit.rule
 echo "-w /etc/hosts -p wa -k system-locale" >> /etc/audit/rules.d/audit.rules
 echo "-w /etc/sysconfig/network -p wa -k system-locale" >> /etc/audit/rules.d/audit.rules
 echo "-w /etc/sysconfig/network-scripts/ -p wa -k system-locale" >> /etc/audit/rules.d/audit.rules
+service auditd restart

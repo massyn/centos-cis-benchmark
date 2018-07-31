@@ -8,3 +8,4 @@ echo "-w /etc/passwd -p wa -k identity" >>/etc/audit/rules.d/audit.rules
 echo "-w /etc/gshadow -p wa -k identity" >>/etc/audit/rules.d/audit.rules
 echo "-w /etc/shadow -p wa -k identity" >>/etc/audit/rules.d/audit.rules
 echo "-w /etc/security/opasswd -p wa -k identity" >>/etc/audit/rules.d/audit.rules
+service auditd restart
