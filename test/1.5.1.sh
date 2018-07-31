@@ -3,8 +3,6 @@
 
 # 1.5.1 - Ensure core dumps are restricted (Scored)
 
-grep "hard core" /etc/security/limits.conf /etc/security/limits.d/*
-
 if [[ $(ls -A /etc/security/limits.d/) ]] ; then
         grep "hard core\s*0" /etc/security/limits.conf /etc/security/limits.d/* || exit $?
 else
