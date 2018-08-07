@@ -3,4 +3,4 @@
 
 # 2.2.5 - Ensure DHCP Server is not enabled (Scored)
 
-chkconfig dhcpd off 
+systemctl disable dhcpd

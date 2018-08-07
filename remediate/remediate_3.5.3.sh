@@ -3,4 +3,4 @@
 
 # 3.5.3 - Ensure RDS is disabled (Not Scored)
 
-echo install rds /bin/true >> /etc/modprobe.d/CIS.conf
+echo "install rds /bin/true" >> /etc/modprobe.d/CIS.conf

@@ -8,7 +8,6 @@ if [[ -f /etc/cron.deny || -f /etc/at.deny ]]; then
         exit 1
 fi
 
-stat /etc/cron.allow
 stat -L -c "%a %u %g" /etc/cron.allow | grep -q "600 0 0$" || exit $?
-stat /etc/at.allow
+
 stat -L -c "%a %u %g" /etc/at.allow | grep -q "600 0 0$" || exit $?

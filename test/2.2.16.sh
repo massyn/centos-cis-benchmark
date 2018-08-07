@@ -3,6 +3,4 @@
 
 # 2.2.16 - Ensure NIS Server is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^(ypserv)\s" |grep ":on")
-[[ -z "${out}" ]] || exit 1
-
+systemctl is-enabled ypserv 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?

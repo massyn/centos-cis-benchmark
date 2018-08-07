@@ -3,4 +3,4 @@
 
 # 3.5.2 - Ensure SCTP is disabled (Not Scored)
 
-echo install sctp /bin/true >> /etc/modprobe.d/CIS.conf
+echo "install sctp /bin/true" >> /etc/modprobe.d/CIS.conf

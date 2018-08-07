@@ -3,4 +3,4 @@
 
 # 2.2.16 - Ensure NIS Server is not enabled (Scored)
 
-chkconfig ypserv off 
+systemctl disable ypserv

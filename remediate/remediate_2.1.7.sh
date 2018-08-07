@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 2.1.7 - Ensure talk server is not enabled (Scored)
+# 2.1.7 - Ensure xinetd is not enabled (Scored)
 
-chkconfig talk off 
+systemctl disable xinetd

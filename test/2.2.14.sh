@@ -3,6 +3,4 @@
 
 # 2.2.14 - Ensure SNMP Server is not enabled (Scored)
 
-out=$(chkconfig --list | grep -E "^(snmpd)\s" |grep ":on")
-[[ -z "${out}" ]] || exit 1
-
+systemctl is-enabled snmpd 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
