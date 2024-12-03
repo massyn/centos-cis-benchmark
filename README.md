@@ -2,6 +2,9 @@
 Based on CIS CentOS Linux 7 Benchmark
 v2.2.0 - 12-27-2017
 
+> [!WARNING]  
+> CentOS 7 has reached [end-of-life](https://www.redhat.com/en/topics/linux/centos-linux-eol).
+
 ## How to run the audit
 To run the audit, execute these steps
 
